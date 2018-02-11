@@ -27,6 +27,8 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+	<script src="assets/js/Chart.js"></script>
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -46,11 +48,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-<img src="assets/img/p32.png" class="img-responsive">        </div>
+<img src="assets/img/p32.png" class="img-responsive">         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li class="active"><a href="about.html">ABOUT</a></li>
             <li><a href="services.html">SERVICES</a></li>
             <li><a href="works.html">WORKS</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
@@ -59,15 +61,44 @@
       </div>
     </div>
 
-	<div id="headerwrap">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
 
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- headerwrap -->
+
+     <!--
+	<div class="container w">
+		<div class="row centered">
+			<br><br>
+			<div class="col-lg-3">
+				<img class="img-circle" src="assets/img/pic.jpg" width="110" height="110" alt="">
+				<h4>Frank Lampard</h4>
+				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+				<p><a href="#">@Frank_BlackTie</a></p>
+			</div><!-- col-lg-3 
+
+			<div class="col-lg-3">
+				<img class="img-circle" src="assets/img/pic2.jpg" width="110" height="110" alt="">
+				<h4>David Wright</h4>
+				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+				<p><a href="#">@David_BlackTie</a></p>
+			</div><!-- col-lg-3 
+
+			<div class="col-lg-3">
+				<img class="img-circle" src="assets/img/pic3.jpg" width="110" height="110" alt="">
+				<h4>Mark Milestone</h4>
+				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+				<p><a href="#">@Mark_BlackTie</a></p>
+			</div><!-- col-lg-3 
+
+			<div class="col-lg-3">
+				<img class="img-circle" src="assets/img/pic4.jpg" width="110" height="110" alt="">
+				<h4>Tania Tissen</h4>
+				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+				<p><a href="#">@Tania_BlackTie</a></p>
+			</div><!-- col-lg-3 
+		</div><!-- row -->
+	</div><!-- container -->
+<br>
+<br>
+<br>
 <!-- About Section -->
 <div id="about-section">
   <div class="container">
@@ -93,115 +124,107 @@
 <br>
 <br>
 <br>
-	<div id="lg1">
-<div class="container w">
-		<div class="row centered">
-
-			<h2>Our Services</h2>
-			<br><br>
-			<div class="col-lg-4">
-        		<h4>Business Website</h4>
-				<p>If you're looking to give your current webiste a facelift or create an entirely new webiste for your business, we have you covered. Our team can produce functional, sleek, adn satisfying webiste for you, so you don't have to.</p>
-			</div><!-- col-lg-4 -->
-
-			<div class="col-lg-4">
-				<h4>Video Production</h4> 
-				<p>Our video production ream can create high quality professional videos for you. Wether you're promoting your business or shooting the music video for your newest song, we promise you'll love it!</p>
-			</div><!-- col-lg-4 -->
-
-			<div class="col-lg-4">
-        <h4>Social Media</h4> 
-				<p>We can design attention grabbing media advertising campaigns for your businesses, events, and other personal ventures.</p>
-			</div><!-- col-lg-4 -->
-		</div><!-- row -->
-		<br>
-		<div class="row centered">
-			<br><br>
-			<div class="col-lg-4">
-        		<h4>Personal Website</h4>
-				<p>Our team can make blog pages, portfolios, and other useful personal sites for you. If you want a professional site to documnet your career and projects, we can make you one.</p>
-			</div><!-- col-lg-4 -->
-			
-				<div class="col-lg-4">
-                <h4>Photography</h4>
-				<p>We can help you capture the perfect look for your band, company, or other ventures with our high quakity photography services.</p>
-			</div><!-- col-lg-4 -->
-				<div class="col-lg-4">
-                 <h4>Design & Brand</h4>
-				<p>We can help you design the perfect logo or banner for your company, or other ventures with our highly experienced graphics design team team.</p>
-			</div><!-- col-lg-4 -->
-		</div><!-- row -->
-	</div><!-- container -->
-<br>
-<br>
-
 	<!-- PORTFOLIO SECTION -->
 	<div id="dg">
 		<div class="container">
 			<div class="row centered">
-				<h4>LATEST WORKS</h4>
+				<h4>OUR SKILLS</h4>
 				<br>
-				<div class="col-lg-4">
-					<div class="tilt">
-					<a href="#"><img src="assets/img/p30.png" alt=""></a>
-					</div>
-				</div>
+				
+			<!-- First Chart -->
+			<div class="col-lg-3">
+				<canvas id="canvas" height="130" width="130"></canvas>
+				<br>
+				<script>
+					var doughnutData = [
+							{
+								value: 70,
+								color:"#3498db"
+							},
+							{
+								value : 30,
+								color : "#ecf0f1"
+							}
+						];
+						var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+				</script>
+				<p><b>Design & Brand</b></p>
+				<p><small>We can help you design the perfect logo or banner for your company, or other ventures with our highly experienced graphics design team team.</small></p>
+			</div><!-- /col-lg-3 -->
 
-				<div class="col-lg-4">
-					<div class="tilt">
-					<a href="#"><img src="assets/img/p31.png" alt=""></a>
-					</div>
-				</div>
-
-				<div class="col-lg-4">
-					<div class="tilt">
-					<a href="#"><img src="assets/img/p30.png" alt=""></a>
-					</div>
-				</div>
+			<!-- Second Chart -->
+			<div class="col-lg-3">
+				<canvas id="canvas2" height="130" width="130"></canvas>
+				<br>
+				<script>
+					var doughnutData = [
+							{
+								value: 90,
+								color:"#3498db"
+							},
+							{
+								value : 43,
+								color : "#ecf0f1"
+							}
+						];
+						var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
+				</script>
+				<p><b>Web Development</b></p>
+				<p><small>If you're looking to give your current webiste a facelift or create an entirely new webiste for your business, we have you covered. Our team can produce functional, sleek, adn satisfying webiste for you, so you don't have to.</small></p>
+			</div><!-- /col-lg-3 -->
+			
+			<!-- Third Chart -->
+			<div class="col-lg-3">
+				<canvas id="canvas3" height="130" width="130"></canvas>
+				<br>
+				<script>
+					var doughnutData = [
+							{
+								value: 55,
+								color:"#3498db"
+							},
+							{
+								value : 30,
+								color : "#ecf0f1"
+							}
+						];
+						var myDoughnut = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
+				</script>
+				<p><b>Photography</b></p>
+				<p><small>We can help you capture the perfect look for your band, company, or other ventures with our high quakity photography services.</small></p>
+			</div><!-- /col-lg-3 -->
+			
+			<!-- Fourth Chart -->
+			<div class="col-lg-3">
+				<canvas id="canvas4" height="130" width="130"></canvas>
+				<br>
+				<script>
+					var doughnutData = [
+							{
+								value: 80,
+								color:"#3498db"
+							},
+							{
+								value : 20,
+								color : "#ecf0f1"
+							}
+						];
+						var myDoughnut = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
+				</script>
+				<p><b>Social Media Marketing</b></p>
+				<p><small>We can design attention grabbing media advertising campaigns for your businesses, events, and other personal ventures.</small></p>
+			</div><!-- /col-lg-3 -->
+				
+				
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- DG -->
-
-
-
-
-	<div id="lg">
-		<div class="container">
-			<div class="row centered">
-				<h4>OUR AWESOME CLIENTS</h4>
-				<h2>COMING SOON!</h2>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<!--
-				<div class="col-lg-2 col-lg-offset-1">
-					<img src="assets/img/c06.jpg" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="assets/img/c02.gif" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="assets/img/c03.gif" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="assets/img/c04.gif" alt="">
-				</div>
-				<div class="col-lg-2">
-					<img src="assets/img/c05.gif" alt="">
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- dg -->
-	
-
 	
 	
 	<!-- FOOTER -->
 	<div id="f">
 		<div class="container">
-				<div class="row centered">
+			<div class="row centered">
 				<a href="https://twitter.com/wayside_media"><i class="fa fa-twitter"></i></a>
 				<a href="https://www.facebook.com/Wayside-Multimedia-325091618001752/?modal=admin_todo_tour"><i class="fa fa-facebook"></i>
 				</a><a href="https://www.instagram.com/wayside_multimedia/"><i class="fa fa-instagram"></i></a>
@@ -209,6 +232,7 @@
 				<br>
 				<h7>Contact Us: info@waysidemultimedia.com<h7>
 
+		
 			</div><!-- row -->
 		</div><!-- container -->
 	</div><!-- Footer -->
@@ -221,7 +245,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h7 class="modal-title" id="myModalLabel">Contact Us</h7>
+	        <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
 	      </div>
 	      <div class="modal-body">
 		        <div class="row centered">
@@ -230,9 +254,6 @@
 						+1 919-737-5660<br/>
 						info@waysidemultimedia.com
 		        	</p>
-					</div>	
-		        </div>
-	      </div>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
